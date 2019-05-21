@@ -14,6 +14,9 @@ import java.util.Map;
 
 public class BordersDAO {
 	
+	
+	
+	
 	public List<Country> loadAllCountries(Map<Integer,Country> countriesMap) {
 		
 		String sql = 
@@ -50,12 +53,21 @@ public class BordersDAO {
 			
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		  e.printStackTrace();
 		}
 		
 		return null ;
 	}
+	
+	
+	
+	
+	/**
+	 * Ricava tutti gli stati esistenti in un certo anno, ovvero i vertici del grafo
+	 * @param anno
+	 * @param countriesMap
+	 * @return lista di {@link Country}
+	 */
 	
 	public List<Country> getCountriesFromYear(int anno,Map<Integer,Country> countriesMap) {
 		String sql = "select * from country " + 
@@ -93,13 +105,23 @@ public class BordersDAO {
 			
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		return null ;
 
 	}
+	
+	
+	
+	
+	
+	/**
+	 * Ricavo gli archi del grafo ovvero una lista di stati confinanti tra loro
+	 * @param anno
+	 * @return lista di {@link Adiacenza}
+	 */
+	
 	
 	public List<Adiacenza> getCoppieAdiacenti(int anno) {
 		String sql = "select state1no, state2no " + 
@@ -127,7 +149,6 @@ public class BordersDAO {
 			return result ;
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null ;
 		}

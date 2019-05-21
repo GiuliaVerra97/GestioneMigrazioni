@@ -2,8 +2,8 @@ package it.polito.tdp.borders.model;
 
 public class CountryAndNumber implements Comparable<CountryAndNumber> {
 	
-	private Country country ;
-	private int number ;
+	private Country country ;			
+	private int number ;		//numero degli stati a lui confinanti oppure num di immigrati stanziati nello stato, dipende dall'utilità
 	
 	public CountryAndNumber(Country country, int number) {
 		super();

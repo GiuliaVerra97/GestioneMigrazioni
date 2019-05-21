@@ -7,13 +7,16 @@ public class TestModel {
 		
 		Model m = new Model() ;
 		
-		m.creaGrafo(1950);
+		m.creaGrafo(2016);
+		Country country=new Country(325, "ITA", "Italy");
 		
 		List<CountryAndNumber> list = m.getCountryAndNumber() ;
 		
 		for(CountryAndNumber c: list) {
 			System.out.format("%s %d\n", c.getCountry().getStateName(), c.getNumber()) ;
 		}
+		
+		System.out.print(m.trovaConfinanti(country));
 		
 	}
 
